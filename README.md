@@ -19,4 +19,4 @@ I've created/copied/modified 6 functions.
 - Get-CosmosDocument
 - Remove-CosmosDocument
 
-As an example the script retreives the serialnumber, model and BIOS version of my computer and creates a Cosmos document.
+As an example the script retrieves the serialnumber, model and BIOS version of my computer and creates a Cosmos document.
