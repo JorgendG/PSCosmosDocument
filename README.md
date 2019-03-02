@@ -20,3 +20,15 @@ I've created/copied/modified 6 functions.
 - Remove-CosmosDocument
 
 As an example the script retreives the serialnumber, model and BIOS version of my computer and creates a Cosmos document.
+
+```
+$jsonRequest = @{
+    id= "MYSERIAL"
+    model = "eniac"
+    biosversion = "1.2"
+}
+
+$json = $jsonRequest | ConvertTo-Json
+
+New-CosmosDocument -EndPoint $CosmosDBEndPoint -DataBaseId $DatabaseId -CollectionId $CollectionId -MasterKey $MasterKey -JSON $JSON
+```

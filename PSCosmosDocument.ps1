@@ -39,7 +39,7 @@ Function Query-CosmosDb
 	)
 
 	$Verb = "POST"
-	$ResourceType = "docs";
+	$ResourceType = "docs"
 	$ResourceLink = "dbs/$DatabaseId/colls/$CollectionId"
 
 	$dateTime = [DateTime]::UtcNow.ToString("r")
@@ -67,7 +67,7 @@ Function New-CosmosDocument
     )
  
     $Verb = "POST"
-    $ResourceType = "docs";
+    $ResourceType = "docs"
     $ResourceLink = "dbs/$DatabaseId/colls/$CollectionId"
  
     $dateTime = [DateTime]::UtcNow.ToString("r")
@@ -120,6 +120,7 @@ Function Get-CosmosDocument
     )
 
     $Verb = "GET"
+    $ResourceType = "docs"
     $ResourceLink = "dbs/$DataBaseId/colls/$CollectionId/docs/$DocumentID"
     $dateTime = [DateTime]::UtcNow.ToString("r")
     $authHeader = Generate-MasterKeyAuthorizationSignature -verb $Verb -resourceLink $ResourceLink -resourceType $ResourceType -key $MasterKey -keyType "master" -tokenVersion "1.0" -dateTime $dateTime
@@ -150,6 +151,7 @@ Function Remove-CosmosDocument
     )
 
     $Verb = "DELETE"
+    $ResourceType = "docs"
     $ResourceLink = "dbs/$DataBaseId/colls/$CollectionId/docs/$DocumentID"
     $dateTime = [DateTime]::UtcNow.ToString("r")
     $authHeader = Generate-MasterKeyAuthorizationSignature -verb $Verb -resourceLink $ResourceLink -resourceType $ResourceType -key $MasterKey -keyType "master" -tokenVersion "1.0" -dateTime $dateTime
